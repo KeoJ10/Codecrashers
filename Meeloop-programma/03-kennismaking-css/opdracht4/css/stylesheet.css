@@ -1,0 +1,63 @@
+body {
+	font-size: 18px;
+	color: rgb(62, 59, 58);
+	font-family: 'Nunito Sans', sans-serif;
+	background-color: rgb(62, 59, 58);
+	background-image: url('../img/pattern-grey.jpg');
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	max-width: 1440px;
+	margin: 0 auto;
+	border-left: 10px solid rgb(158, 42, 34);
+	border-right: 10px solid rgb(85, 34, 119);
+}
+
+header > img {
+	display: block;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	background-color: rgb(255, 255, 255);
+	background-image: url('../img/pattern-white.jpg');
+}
+
+main > section {
+	flex: 1;
+	padding: 3rem;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+}
+
+footer > figure {
+	flex: 1;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+footer > figure:first-child {
+	background-color: rgb(158, 42, 34);
+}
+
+footer > figure:last-child {
+	background-color: rgb(85, 34, 119);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 720px) {
+	main {
+		flex-direction: column;
+	}
+}

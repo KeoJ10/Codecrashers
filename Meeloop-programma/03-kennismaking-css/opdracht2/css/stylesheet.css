@@ -1,0 +1,40 @@
+body {
+	font-size: 20px;
+	font-family: Calibri, Arial, sans-serif;
+	background-color: rgb(111, 59, 108);
+}
+article {
+	padding: 1rem;
+	width: 320px;
+}
+.fire {
+	background-color: rgb(206, 50, 50);
+}
+.ice {
+	background-color: rgb(129, 183, 225);
+}
+.thunder {
+	background-color: rgb(206, 200, 50);
+}
+.water {
+	background-color: rgb(38, 54, 152);
+}
+.earth {
+	background-color: rgb(88, 69, 52);
+}
+.wind {
+	background-color: rgb(240, 240, 240);
+}
+.grass {
+	background-color: rgb(61, 117, 39);
+}
+.ghost {
+	background-color: rgb(92, 86, 100);
+}
+.holy {
+	background-color: rgb(231, 232, 156);
+}
+.dark {
+	color: rgb(245, 245, 245);
+	background-color: rgb(10, 10, 10);
+}
