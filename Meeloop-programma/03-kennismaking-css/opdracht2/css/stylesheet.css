@@ -2,39 +2,57 @@ body {
 	font-size: 20px;
 	font-family: Calibri, Arial, sans-serif;
 	background-color: rgb(111, 59, 108);
+	
+}
+main{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 3%;
 }
 article {
 	padding: 1rem;
 	width: 320px;
+	
 }
 .fire {
 	background-color: rgb(206, 50, 50);
+	text-align: center;
 }
 .ice {
 	background-color: rgb(129, 183, 225);
+	text-align: center;
 }
 .thunder {
 	background-color: rgb(206, 200, 50);
+	text-align: center;
 }
 .water {
 	background-color: rgb(38, 54, 152);
+	text-align: center;
 }
 .earth {
 	background-color: rgb(88, 69, 52);
+	text-align: center;
 }
 .wind {
 	background-color: rgb(240, 240, 240);
+	text-align: center;
 }
 .grass {
 	background-color: rgb(61, 117, 39);
+	text-align: center;
 }
 .ghost {
 	background-color: rgb(92, 86, 100);
+	text-align: center;
 }
 .holy {
 	background-color: rgb(231, 232, 156);
+	text-align: center;
 }
 .dark {
 	color: rgb(245, 245, 245);
 	background-color: rgb(10, 10, 10);
+	text-align: center;
 }
