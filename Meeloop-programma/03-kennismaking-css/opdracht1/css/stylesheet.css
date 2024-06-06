@@ -1,8 +1,16 @@
 body{
     background-color: #800000;
-    font-family: Calibri, sans-serif;
+    
     
 }
 img:hover {
     filter: contrast(200%);
+}
+h1{
+    color: aqua;
+   font-family: 'Courier New';
+}
+p{
+    color: black;
+    font-style: oblique;
 }

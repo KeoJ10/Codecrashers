@@ -10,7 +10,8 @@ echo '<ul>
 
 $file = 'registration.txt';
 
-$output = $_POST['fname']. ','.$_POST['ltijd'].','.$_POST['mail'].','.$_POST['wplaats'].date_date_set(2024,06,03);
+
+$output = $_POST['fname']. ','.$_POST['ltijd'].','.$_POST['mail'].','.date(06,2024);
 
 file_put_contents($file, $output);
 
