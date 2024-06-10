@@ -15,6 +15,10 @@ class Dog extends Animals{
 	public function bark() {
 		echo '<p>'.$this->name.' zegt: <q>Bork, bork, bork</q>.</p>';
 	}
+	public function showInfo(){
+		echo '<p>'.$this->name.' is een hond van '.$this->age.' jaar oud. En zijn race is '.$this->race.'</p>';
+
+	}
    
    
     

@@ -19,10 +19,7 @@
             echo '<p>'.$this->name.' is een kat van '.$this->age.' jaar oud. En zijn vacht is '.$this->furr.'.</p>';
 
         }
-        public function ageing(){
-            $this->age+=1;
-            echo '<p>'.$this->name.' is 1 jaar ouder geworden en is nu '.$this->age.'</p>';
-        }
+       
         
 	}
 ?>
