@@ -5,15 +5,17 @@ echo '<ul>
         <li>'.$_POST['ltijd'].'</li>
         <li>'.$_POST['mail'].'</li>
         <li>'.$_POST['wplaats'].'</li>
+        <li>'.$_POST['datum'].'</li>
     </ul>';
 
 
 $file = 'registration.txt';
 
+$output2 = join(',',$_POST);
+//$output = $_POST['fname']. ','.$_POST['ltijd'].','.$_POST['mail'].','.$_POST['datum'];
 
-$output = $_POST['fname']. ','.$_POST['ltijd'].','.$_POST['mail'].','.date(06,2024);
+file_put_contents($file, $output2);
 
-file_put_contents($file, $output);
 
 
 ?>

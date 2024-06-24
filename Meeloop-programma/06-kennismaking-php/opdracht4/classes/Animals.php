@@ -1,5 +1,5 @@
 <?php
-abstract class Animals{    
+abstract class Animals{
     private string $name;
 	private string $race;
 	private int $age;

@@ -19,7 +19,7 @@
             echo '<p>'.$this->name.' is een kat van '.$this->age.' jaar oud. En zijn vacht is '.$this->furr.'.</p>';
 
         }
-       
+
         
 	}
 ?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Dog extends Animals{
 	private string $name;
@@ -19,8 +19,8 @@ class Dog extends Animals{
 		echo '<p>'.$this->name.' is een hond van '.$this->age.' jaar oud. En zijn race is '.$this->race.'</p>';
 
 	}
-   
-   
+
+
     
 }
 ?>
