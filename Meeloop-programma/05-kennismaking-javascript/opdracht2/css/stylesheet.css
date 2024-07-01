@@ -1,0 +1,53 @@
+body {
+	background-color: peachpuff;
+	background-image: url('../img/cat-background.png');
+	font-family: Arial, sans-serif;
+	color: rgb(50, 50, 50);
+}
+
+#container {
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: rgb(255, 243, 231);
+	border: 8px dashed rgb(157, 103, 70);
+	padding: 5rem;
+	display: grid;
+	grid-gap: 5rem;
+}
+
+#section-2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.paw {
+	width: 50px;
+	height: 50px;
+	padding: 15px;
+	border: 5px solid rgb(157, 103, 70);
+	box-shadow: 0px 0px 5px 1px rgb(157, 103, 70);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#button-1 {
+	background-color: crimson;
+}
+
+#button-2 {
+	background-color: seagreen;
+}
+
+#button-3 {
+	background-color: mediumorchid;
+}
+
+#button-4 {
+	background-color: goldenrod;
+}
+
+#button-5 {
+	background-color: dodgerblue;
+}

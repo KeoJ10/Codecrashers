@@ -4,8 +4,11 @@
 		...
 	</head>
 	<body>
-		<?php
-			...
+	<?php
+			
+			$sql = "SELECT name, email FROM MyGuests";
 		?>
+	
 	</body>
 </html>
+
