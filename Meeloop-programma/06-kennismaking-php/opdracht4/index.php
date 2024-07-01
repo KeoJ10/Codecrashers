@@ -4,13 +4,13 @@
     require_once 'classes/Dog.php';
     
     $cat = new cat('Darwin Nunez', 2, 'wit');
-    $dog = new dog('Arthur Morgan', 'shiba', 7);
+    $dog = new dog('Arthur Morgan', 7, 'shiba');
     $dog->bark();
     $cat->meow();
-    $cat->showInfo();
     $cat->ageing();
-    $dog->showInfo();
     $cat->showInfo();
+    $dog->showInfo();
+    
 
     
 

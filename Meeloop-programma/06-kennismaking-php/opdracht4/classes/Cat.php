@@ -1,25 +1,15 @@
 <?php
 	class Cat extends Animals{
-		private string $name;
-		private int $age;
-        private string $furr;
 		
 		public function __construct($name, $age, $furr){
-			$this->name = $name;
-			$this->age = $age;
-            $this->furr = $furr;
-
-
-		}
+		
+		parent::__construct($name, $age, $furr,null);
+		$this->furr = $furr;
+}
 		
 		public function meow(){
 			echo '<p>'.$this->name.' zegt: <q>Meow, meow, meow</q>.</p>';
 		}
-        public function showInfo(){
-            echo '<p>'.$this->name.' is een kat van '.$this->age.' jaar oud. En zijn vacht is '.$this->furr.'.</p>';
-
-        }
-
         
 	}
 ?>
