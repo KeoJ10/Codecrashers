@@ -1,0 +1,44 @@
+body {
+    width: 1800px;
+}
+
+#id-1 {
+    background-color: red;
+    height: 200px;
+    text-align: center;
+    font-size: larger;
+    font-family: monospace;
+    color: aqua;
+}
+
+#id-2 {
+    background-color: green;
+    height: 150px;
+    font-size: 200%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: antiquewhite;
+}
+
+#id-3 {
+    background-color: beige;
+    height: 300px;
+    font-size: 400%;
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+
+#id-4 {
+    background-color: darkgreen;
+    height: 150px;
+    font-size: 80%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: pink;
+}
+
+#id-5 {
+    background-color: burlywood;
+    height: 150px;
+    font-size: 500%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: brown;
+}

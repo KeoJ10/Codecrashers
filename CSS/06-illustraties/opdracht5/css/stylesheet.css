@@ -1,0 +1,61 @@
+@font-face {
+    src: url('../fonts/LifeCraft_Font.ttf');
+    font-family: LifeCraft;
+}
+
+body {
+    font-family: LifeCraft, Verdana, sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.alliance {
+    color: royalblue;
+}
+
+.horde {
+    color: crimson;
+}
+
+.human {
+    box-shadow: 10px 0px 10px 0px grey;
+}
+
+.dwarf {
+    box-shadow: -20px 30px 0px 10px black;
+}
+
+.night-elf {
+    box-shadow: 0px -10px 10px 0px purple;
+}
+
+.gnome {
+    box-shadow: 0px 0px 10px 0px red;
+    border-radius: 30px;
+}
+
+img .gnome {
+    border-radius: 30px;
+}
+
+.orc {
+    box-shadow: 50px -20px 20px green;
+}

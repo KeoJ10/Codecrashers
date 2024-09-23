@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "bebas-otf";
+    src: url("../fonts/BebasNeue-Regular.otf");
+}
+
+@font-face {
+    font-family: "OldLonden";
+    src: url("../fonts/OldLondon.ttf");
+}
+
+@font-face {
+    font-family: "protest";
+    src: url("../fonts/ProtestGuerrilla-Regular.ttf");
+}
+
+body {
+    font-family: "OldLonden";
+}
+
+h1 {
+    font-size: 250%;
+    font-family: "bebas-otf";
+}
+
+h2 {
+    font-size: 175%;
+    font-family: "protest";
+}
+
+blockquote {
+    font-size: 125%;
+    font-family: "roboto", sans-serif;
+    writing-mode: vertical-lr;
+}
