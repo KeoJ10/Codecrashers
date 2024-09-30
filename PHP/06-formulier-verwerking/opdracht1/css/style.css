@@ -1,0 +1,14 @@
+    body {
+        background-color: rgba(102, 2, 2, 0.598);
+    }
+    
+    .invoervelden {
+        font-size: larger;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    p {
+        text-align: center;
+    }
