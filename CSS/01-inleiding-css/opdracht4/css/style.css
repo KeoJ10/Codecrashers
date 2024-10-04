@@ -17,7 +17,7 @@ body {
     background-color: lightblue;
 }
 
-#list {
+ol {
     color: green;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

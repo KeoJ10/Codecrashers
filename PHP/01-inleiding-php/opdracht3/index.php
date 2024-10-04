@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Standaardfuncties</title>
+		<title>Standardfunktionen</title>
 	</head>
 	<body>
 		<div id="container">
@@ -18,7 +18,7 @@
 				echo '<p>'.strtoupper($string1).'</p>';
 				echo '<p>'.strtoupper($string2).'</p>';
 				echo '<p>'.mb_strtoupper($string3, 'UTF-8').'</p>';
-				echo '<p>'.strtoupper($string4).'</p>';
+				echo '<p>'.mb_strtoupper($string4, 'UTF-8').'</p>';
 				
 			?>
 		</div>
