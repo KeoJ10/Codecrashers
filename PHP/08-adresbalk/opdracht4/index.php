@@ -9,6 +9,7 @@ $gameProducts = [
 				['game' =>  'Dark Souls Remastered', 'date' => '25-05-2018', 'price' => 49.99, 'console' => 'ps4', 'location' => 7,'img' => 'images/9200000088311502.jpg'],
 				['game' =>  'Attack on Titan 2 - A.O.T. 2', 'date' => '30-03-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 8, 'img' => 'images/9200000088397115.jpg']
 ];
+
 $productString = '';
 for($i = 0; $i < count($gameProducts); $i++){
 	$productString .= '<article>
@@ -19,10 +20,7 @@ for($i = 0; $i < count($gameProducts); $i++){
 			<span class="price">' . $gameProducts[$i]['price'] . '</span>
 			</article>';
 		}
-	
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -35,6 +33,20 @@ for($i = 0; $i < count($gameProducts); $i++){
 	<body>
 		<div id="container">
 			<header>
+				<form method="get" action="<?=htmlspecialchars($_SERVER['PHP_SELF']);?>">
+			<label for="product">Hoeveelheid</label>
+				<select name="product" id="product">
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="8">8</option>
+				</select>
+				<input type="radio" name="oplopend" id="oplopend">
+				<label for="oplopend">(A-Z)</label>
+				<input type="radio" name="aflopend" id="aflopend">
+				<label for="aflopend">(Z-A)</label>
+				<button>opnieuw tonen</button>
+				</form>
 				<ol class="breadcrumbs">
 					<li>
 						<a href="http://www.webshop.com"><span content="Home"><i class="fa fa-home"></i></span></a> >

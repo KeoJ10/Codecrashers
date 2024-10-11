@@ -1,0 +1,24 @@
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    #username,
+    #password {
+        width: 400px;
+        text-align: center;
+        color: rgb(69, 145, 119);
+    }
+    
+    body {
+        background-color: mintcream;
+    }
+    
+    button {
+        height: 35px;
+        width: 200px;
+        background-color: green;
+        color: white;
+    }
