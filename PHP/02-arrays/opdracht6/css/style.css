@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-around;
+    background: linear-gradient(-180deg, rgba(255, 255, 255, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+}
+
+article {
+    background-color: black;
+    color: white;
+    width: 500px;
+    padding: 12px;
+}
+
+article:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e73a;
+    transform: translateY(-2px);
+}
+
+h1 {
+    margin: 0%;
+}
+
+.keys {}
