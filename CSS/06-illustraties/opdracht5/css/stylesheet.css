@@ -40,22 +40,35 @@ figcaption {
 }
 
 .dwarf {
-    box-shadow: -20px 30px 0px 10px black;
+    box-shadow: -20px 20px 0px 0px black;
 }
 
 .night-elf {
-    box-shadow: 0px -10px 10px 0px purple;
+    box-shadow: 0px -20px 30px 0px blue;
 }
 
 .gnome {
-    box-shadow: 0px 0px 10px 0px red;
-    border-radius: 30px;
-}
-
-img .gnome {
+    box-shadow: 0px 0px 20px 0px red;
     border-radius: 30px;
 }
 
 .orc {
     box-shadow: 50px -20px 20px green;
+}
+
+.undead {
+    box-shadow: 0px -10px 10px 10px blue, 0px 10px 10px 10px violet;
+    border-radius: 20px;
+}
+
+.tauren {
+    box-shadow: -30px -20px 10px 10px orange, 0px 20px 10px 0px red, 50px -20px 10px 0px black;
+}
+
+.troll {
+    box-shadow: 0px 0px 5px 10px rgb(185, 2, 185), -20px -20px 10px 10px greenyellow, 10px 20px 10px 10px yellow;
+}
+
+.panda {
+    filter: drop-shadow(0px 0px 15px black);
 }

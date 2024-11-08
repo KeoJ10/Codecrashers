@@ -1,20 +1,25 @@
 <?php
+$userInput = [];
 if (isset($_POST['submit'])) {
     if (!empty($_POST['textsize'])) {
         $textSize = $_POST['textsize'];
+        array_push($userInput, $textSize);
     }
     if(!empty($_POST['textColor'])){
         $textColor = $_POST['textColor'];
+        array_push($userInput, $textColor);
     }
     if(!empty($_POST['backgroundColor'])){
         $backgroundColor = $_POST['backgroundColor'];
+        array_push($userInput, $backgroundColor);
     }
     if(!empty($_POST['dropDown'])){
-        $dropDown = $_POST['dropwDown'];
-        echo 'dropwdown is empty';
+        $dropDown = $_POST['dropDown'];
+        array_push($userInput, $dropDown);
     }
     if(!empty($_POST['shadow'])){
         $shadow = $_POST['shadow'];
+        array_push($userInput, $shadow);
     }
     }
 ?>
@@ -23,14 +28,20 @@ if (isset($_POST['submit'])) {
     <head>
         <title>Cookies</title>
         <link rel="stylesheet" href="css/style.css">
-        <style>
+                <style>
         body{
             font-size: <?=$textSize ?? '18';?>px;
-            
+            font-family: <?=$dropDown;?>;
         }
         p{
             color: <?=$textColor;?>;
         }
+        img{ <?=$shadow ?? '
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 600px;
+    left: 700px;';?>}
         </style>
     </head>
         <body>
@@ -41,13 +52,12 @@ if (isset($_POST['submit'])) {
             <input type="color" name="textColor" id="textColor" value="<?=$textColor ?? 'black';?>"></label><br><br>
             <label for="color">backgroundColor:
             <input type="color" name="backgroundColor" id="backgroundColor" value="#f5f5dc"></label><br><br>
-            <label for="dropdown">font-style:
-            <select id="dropDown" name="dropwDown">
+            <label for="dropdown">font-family:
+            <select id="dropDown" name="dropDown">
                 <option value="Tahoma">Tahoma</option>
-                <option value="italic">'Courier New', Courier, monospace</option>
-                <option value="normal">sans-serif</option>
+                <option value="Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Franklin Gothic Medium</option>
+                <option value="sans-serif">sans-serif</option>
             </select></label><br><br>
-
             <label for="shadow">shadow:
                 <input type="radio" name="shadow"><br><br>
             </label>
@@ -80,11 +90,13 @@ if (!empty($dropDown)) {
 
 }
 if (!empty($shadow)) {
-    echo '<style>img{box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e73a;
-    transform: translateY(-2px);}</style>';
+    echo '<style>img{filter: drop-shadow(0px 0px 15px purple);}</style>';
+}else {
+    echo '<style> img {width: 200px; height: 200px; position: absolute; top: 600px; left: 700px; }</style>';
+    }
 
-}
+$favSettings = json_encode($userInput);
+setcookie("userInput", $favSettings, time() + (86400 * 30), "/");
 
-setcookie($textColor);
 }
 ?>

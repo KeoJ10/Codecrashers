@@ -1,0 +1,65 @@
+.background1 {
+    background-image: url("../img/fm24Header.jpg");
+    height: 100%;
+    width: 100%;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.background2 {
+    background-image: url(../img/Tactics.png);
+    height: 100%;
+    width: 100%;
+}
+
+.background3 {
+    background-image: url(../img/FMGameplay.jpeg);
+    min-height: 400px;
+}
+
+.background4 {
+    background-image: url(../img/fm2.png);
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    color: black;
+    font-family: cursive;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+}
+
+.message {
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.message span {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: black;
+    background-color: #E6E6FA;
+    padding: 20px;
+    opacity: 0.9;
+}
+
+section {
+    min-height: 100px;
+    padding: 40px;
+    background-color: #E6E6FA;
+    color: black;
+    font-size: large;
+}
