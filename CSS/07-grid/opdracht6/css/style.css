@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 1600px;
+    background-color: rgb(25, 25, 25);
+    margin: 0 auto;
+}
+
+#tiles {
+    height: 534px;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+}
+
+#banner {
+    height: 200px;
+    background-color: aliceblue;
+    width: 100%;
+}
+
+#content {
+    height: 469px;
+    background-color: aqua;
+    width: 100%;
+}
+
+#tiles>.cell:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: lightpink;
+}
+
+#tiles>.cell:nth-child(3) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-end: 3;
+    grid-row-start: 1;
+    background-color: lightpink;
+}
+
+#tiles>.cell:nth-child(4) {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-end: 3;
+    grid-row-start: 1;
+    background-color: yellow;
+}
+
+#tiles>.cell:nth-child(5) {
+    grid-column-start: 6;
+    grid-column-end: 5;
+    background-color: lightpink;
+}
+
+#tiles>.cell:nth-child(6) {
+    background-color: lightpink;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 2;
+}
+
+#tiles>.cell:nth-child(7) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    background-color: lightgreen;
+}
+
+#tiles>.cell:nth-child(8) {
+    background-color: lightgreen;
+}
