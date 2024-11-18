@@ -1,6 +1,18 @@
 <?php
+
 $userInput = [];
-if (isset($_POST['submit'])) {
+$error = [];
+if(isset($_COOKIE['userInput'])){
+    $decode = json_decode($_COOKIE["userInput"], false);
+    $textsize = $decode[0];
+    $backgroundColor = $decode[1];
+    $textColor = $decode[2];
+    $dropDown = $decode[3];
+    if(isset($decode[4])){
+        $shadow = $decode[4];
+    }
+}
+if(isset($_POST['submit'])) {
     if (!empty($_POST['textsize'])) {
         $textSize = $_POST['textsize'];
         array_push($userInput, $textSize);
@@ -17,10 +29,12 @@ if (isset($_POST['submit'])) {
         $dropDown = $_POST['dropDown'];
         array_push($userInput, $dropDown);
     }
-    if(!empty($_POST['shadow'])){
+    if(isset($_POST['shadow'])){
         $shadow = $_POST['shadow'];
         array_push($userInput, $shadow);
     }
+    $favSettings = json_encode($userInput);
+    setcookie("userInput", $favSettings, time() + (86400 * 30), "/");
     }
 ?>
 
@@ -59,7 +73,7 @@ if (isset($_POST['submit'])) {
                 <option value="sans-serif">sans-serif</option>
             </select></label><br><br>
             <label for="shadow">shadow:
-                <input type="radio" name="shadow"><br><br>
+                <input type="radio" name="shadow" default='off'><br><br>
             </label>
             <input type="submit" value="verander style" id="submit" name="submit"><br><br>
             </form>
@@ -80,7 +94,6 @@ if (isset($_POST['submit'])) {
 
 <?php
     if(isset($_POST['submit'])){
-
 if (!empty($backgroundColor)) {
     echo '<style> body{background-color:' . $backgroundColor. '}</style>';
 }
@@ -89,14 +102,8 @@ if (!empty($dropDown)) {
     echo '<style>body{font-family:' . $dropDown. '}</style>';
 
 }
-if (!empty($shadow)) {
+if (isset($shadow)) {
     echo '<style>img{filter: drop-shadow(0px 0px 15px purple);}</style>';
-}else {
-    echo '<style> img {width: 200px; height: 200px; position: absolute; top: 600px; left: 700px; }</style>';
-    }
-
-$favSettings = json_encode($userInput);
-setcookie("userInput", $favSettings, time() + (86400 * 30), "/");
-
+}
 }
 ?>
