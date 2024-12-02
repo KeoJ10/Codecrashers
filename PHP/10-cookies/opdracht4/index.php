@@ -1,12 +1,16 @@
 <?php
-
+$textSize = '15';
+$backgroundColor = '#f5f5dc';
+$textColor = 'black';
+$shadow = 'no';
+    
 $userInput = [];
 $error = [];
 if(isset($_COOKIE['userInput'])){
     $decode = json_decode($_COOKIE["userInput"], false);
     $textsize = $decode[0];
-    $backgroundColor = $decode[1];
-    $textColor = $decode[2];
+    $textColor = $decode[1];
+    $backgroundColor = $decode[2];
     $dropDown = $decode[3];
     if(isset($decode[4])){
         $shadow = $decode[4];
@@ -44,28 +48,24 @@ if(isset($_POST['submit'])) {
         <link rel="stylesheet" href="css/style.css">
                 <style>
         body{
-            font-size: <?=$textSize ?? '18';?>px;
+            font-size: <?=$textSize;?>px;
             font-family: <?=$dropDown;?>;
+            background-color: <?=$backgroundColor;?>;
         }
         p{
             color: <?=$textColor;?>;
         }
-        img{ <?=$shadow ?? '
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 600px;
-    left: 700px;';?>}
+        img{ <?php if($shadow == 'on') echo 'filter: drop-shadow(0px 0px 15px purple);';?>}
         </style>
     </head>
         <body>
             <form method="post" id="post">
             <label for="number">Textsize:
-            <input type="number" id="textsize" name="textsize" min="12" max="20" value="<?=$textSize ?? '18';?>"></label><br><br>
+            <input type="number" id="textsize" name="textsize" min="12" max="20" value="<?=$textSize;?>"></label><br><br>
             <label for="color">text color:
-            <input type="color" name="textColor" id="textColor" value="<?=$textColor ?? 'black';?>"></label><br><br>
+            <input type="color" name="textColor" id="textColor" value="<?=$textColor;?>"></label><br><br>
             <label for="color">backgroundColor:
-            <input type="color" name="backgroundColor" id="backgroundColor" value="#f5f5dc"></label><br><br>
+            <input type="color" name="backgroundColor" id="backgroundColor" value="<?=$backgroundColor;?>"></label><br><br>
             <label for="dropdown">font-family:
             <select id="dropDown" name="dropDown">
                 <option value="Tahoma">Tahoma</option>
@@ -73,7 +73,7 @@ if(isset($_POST['submit'])) {
                 <option value="sans-serif">sans-serif</option>
             </select></label><br><br>
             <label for="shadow">shadow:
-                <input type="radio" name="shadow" default='off'><br><br>
+                <input type="radio" name="shadow" value="on"><br><br>
             </label>
             <input type="submit" value="verander style" id="submit" name="submit"><br><br>
             </form>
@@ -91,19 +91,3 @@ if(isset($_POST['submit'])) {
         <img src="images/pusheen-cookie.png" alt="cookies kat">
     </body>
 </html>
-
-<?php
-    if(isset($_POST['submit'])){
-if (!empty($backgroundColor)) {
-    echo '<style> body{background-color:' . $backgroundColor. '}</style>';
-}
-
-if (!empty($dropDown)) {
-    echo '<style>body{font-family:' . $dropDown. '}</style>';
-
-}
-if (isset($shadow)) {
-    echo '<style>img{filter: drop-shadow(0px 0px 15px purple);}</style>';
-}
-}
-?>
