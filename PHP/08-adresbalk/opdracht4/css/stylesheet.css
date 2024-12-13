@@ -1,68 +1,43 @@
 html,
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: cornsilk;
 }
 
 body {
     font-size: 16px;
     font-family: Calibri, Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 #container {
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
-    flex: 1 0 auto;
 }
 
 header {
     min-height: 40px;
 }
 
-ol.breadcrumbs {
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-ol.breadcrumbs>li {
-    padding-right: 5px;
-}
-
 #products {
-    min-height: 400px;
-    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 #products article {
-    padding: 20px;
+    padding: 29px;
     box-sizing: border-box;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 25%;
-    width: 33%;
 }
 
 article img,
 article span {
-    display: block;
-    margin: 4px 0;
-}
-
-article img {
-    box-shadow: 4px 4px 4px darkgray;
+    display: flex;
+    flex-direction: row;
 }
 
 .console {
@@ -71,18 +46,25 @@ article img {
 }
 
 .name {
-    font-size: 1.1em;
+    font-size: 13px;
     font-weight: bold;
+    text-shadow: #FC0 1px 0 10px;
+    align-self: center;
 }
 
 .price {
     color: tomato;
-    align-self: flex-end;
 }
 
 footer {
     width: 100%;
     height: 30px;
     background-color: lightgray;
-    flex-shrink: 0;
+}
+
+#list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style-type: none;
 }

@@ -1,12 +1,39 @@
-<?php
-$gameProducts = [
-				['game' => 'Red Dead Redemption 2','date' => '26-10-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 1, 'img' => 'images/9200000067180307.jpg'],
-				['game' =>  'Ni No Kuni II: Revenant Kingdom', 'date' => '23-03-2018', 'price' => 49.99, 'console' => 'ps4', 'location' => 2,'img' => 'images/9200000053083967.jpg'],
-				['game' =>  'Biomutant', 'date' => '31-12-2018', 'price' => 49.99, 'console' => 'ps4', 'location' => 3, 'img' => 'images/9200000082972427.jpg'],
-				['game' =>  'Far Cry 5 - Deluxe Edition', 'date' => '27-03-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 4,'img' => 'images/9200000078668488.jpg'],
-				['game' =>  'The Lost Child', 'date' => '30-03-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 5,'img' => 'images/9200000084844101.jpg'],
-				['game' =>  'Injustice 2 - Legendary Edition', 'date' => '30-03-2018', 'price' => 49.99, 'console' => 'ps4', 'location' => 6,'img' => 'images/9200000090287767.jpg'],
-				['game' =>  'Dark Souls Remastered', 'date' => '25-05-2018', 'price' => 49.99, 'console' => 'ps4', 'location' => 7,'img' => 'images/9200000088311502.jpg'],
-				['game' =>  'Attack on Titan 2 - A.O.T. 2', 'date' => '30-03-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 8, 'img' => 'images/9200000088397115.jpg']
-];
-?>
+<?php include('includes/verwerking.php') ?>
+<html>
+<head>
+	<link href="css/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+<div id="container">
+		<header>
+			<ol id="list">
+                <li>
+                    <a href="https://fontawesome.com/icons/house?f=classic&s=solid"><span content="Home"><i class="bi bi-house-fill"></i></span></a>
+                </li>
+                <li>></li>
+                <li><a href="url">Muziek</a></li>
+                <li>></li>
+                <li><a href="url">Film & Games</a></li>
+                <li>></li>
+                <li><a href="url">Games</a></li>
+                <li>></li>
+                <li>PlayStation 4</li>
+            </ol>
+		</header>
+<main>
+            <section>
+                <h1>Videogames - PlayStation 4</h1>
+                <p>
+                    Er is een groot aanbod in PlayStation 4 games. Elke game is divers en heeft unieke eigenschappen. Bedenk dus goed in wat voor game jij geïnteresseerd bent. In ons assortiment vind je games in verschillende genres van sport tot actie en van simulatie tot
+                    Role Playing Game (RPG). Exclusieve games voor de PlayStation 4 zijn Horizon Zero Dawn, Uncharted, Gran Turismo, InFamous, Killzone.
+                </p>
+				</section>
+				<section>
+					<?php include('includes/filter.php');?>
+				</section>
+            <section id="products">
+				<?=$loopedGames?>
+</section>
+</div>
+</body>
+</html>
