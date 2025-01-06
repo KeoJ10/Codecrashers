@@ -6,9 +6,9 @@
 			<option value="6">6</option>
 			<option value="8">8</option>
 		</select>
-		<input type="radio" id="oplopend" name="order" value="oplopend">
+		<input type="radio" id="oplopend" name="oplopend" value="oplopend">
 			<label for="oplopend">oplopend a-z</label>
-			<input type="radio" id="aflopend" name="order" value="aflopend">
+			<input type="radio" id="aflopend" name="aflopend" value="aflopend">
 			<label for="aflopend">aflopend z-a</label>
 			<input type="submit" name="submit" value="opnieuw tonen?">
 		</form>

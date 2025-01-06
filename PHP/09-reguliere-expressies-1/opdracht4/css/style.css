@@ -9,7 +9,6 @@
     #password {
         width: 400px;
         text-align: center;
-        color: rgb(69, 145, 119);
     }
     
     body {
@@ -21,4 +20,12 @@
         width: 200px;
         background-color: green;
         color: white;
+    }
+    
+    .warning {
+        color: red;
+    }
+    
+    #success {
+        color: green;
     }

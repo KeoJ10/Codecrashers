@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+$_SESSION['shoppingCart'] = [];
 $loopedGames = '';
 $gameProducts = [
     ['game' => 'Red Dead Redemption 2','date' => '26-10-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 1, 'img' => 'images/9200000067180307.jpg'],
@@ -12,19 +13,19 @@ $gameProducts = [
     ['game' =>  'Attack on Titan 2 - A.O.T. 2', 'date' => '30-03-2018', 'price' => 59.99, 'console' => 'ps4', 'location' => 8, 'img' => 'images/9200000088397115.jpg']
 ];
 
-if(!empty($_GET['order'])){
-    if($_GET['order'] == 'oplopend'){
-        usort($gameProducts, function($a, $b) {
-            return $a['game'] <=> $b['game'];
-        });
-    } else if($_GET['order'] == 'aflopend'){
-        usort($gameProducts, function($a, $b) {
-            return $b['game'] <=> $a['game'];
-        });
-    }
+if(!empty($_GET['oplopend'])){
+	usort($gameProducts, function($a, $b) {
+		return $a['game'] <=> $b['game'];
+	});
+}
+if(!empty($_GET['aflopend'])){
+		usort($gameProducts, function($a, $b) {
+			return $b['game'] <=> $a['game'];
+		});
 }
 
 $showProductAmount = 8;
+
 if(!empty($_GET['showProducts'])){
         $showProductAmount = $_GET['showProducts'];
 }
@@ -33,10 +34,14 @@ if(!preg_match('/^[0-9]+$/', $showProductAmount)) {
     echo "Error: Only numeric values are allowed.";
     exit;
 }
-if(!(!empty($_GET['order']) == 'oplopend' || !empty($_GET['order']) == 'aflopend')){
+if(!(!empty($_GET['oplopend']) == 'oplopend' || !empty($_GET['aflopend']) == 'aflopend')){
     usort($gameProducts, function($a, $b) {
 		return $a['game'] <=> $b['game'];
 	});
+}
+
+if(!empty($_GET['showProducts'])){
+    preg_match("/[A-Za-z0-9]+/", $showProductAmount);
 }
 
 if($showProductAmount > 8){
@@ -48,10 +53,10 @@ if($showProductAmount > 8){
 		'</span><img src="' . $gameProducts[$i]['img'] . '"alt=" '. $gameProducts[$i]['img'] . '" width="168" height="210">' .
 		'<span class="console">' . $gameProducts[$i]['console'] . '</span>' .
 		'<span class="name">' . $gameProducts[$i]['game'] .'</span>' .
-		'<span class="price">' . $gameProducts[$i]['price'] . '</span></article>';
+		'<span class="price">' . $gameProducts[$i]['price'] . '</span>
+        <form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
+        <a href="index.php?addToCart=index.php?addToCart=price"><i class="fa-solid fa-basket-shopping"></i><a>
+        </form></article>';
 	}
-
-    if(!empty($_GET['showProducts'])){
-        preg_match("/[A-Za-z0-9]+/", $showProductAmount);
-    }
+    $price
 ?>
