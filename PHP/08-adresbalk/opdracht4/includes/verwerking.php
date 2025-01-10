@@ -30,13 +30,7 @@ if(!empty($_GET['showProducts'])){
 }
 
 if(!preg_match('/^[0-9]+$/', $showProductAmount)) {
-    echo "Error: Only numeric values are allowed.";
-    exit;
-}
-if(!(!empty($_GET['order']) == 'oplopend' || !empty($_GET['order']) == 'aflopend')){
-    usort($gameProducts, function($a, $b) {
-		return $a['game'] <=> $b['game'];
-	});
+    $showProductAmount = 4;
 }
 
 if($showProductAmount > 8){

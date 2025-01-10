@@ -68,3 +68,29 @@ footer {
     gap: 5px;
     list-style-type: none;
 }
+
+table {
+    border-collapse: collapse;
+    width: 133%;
+    display: flex;
+    justify-content: right;
+}
+
+tr,
+td,
+th {
+    border: 2px solid black;
+    padding: 2px;
+    margin: 0;
+    width: 150px;
+    text-align: end;
+}
+
+th {
+    background-color: lightgray;
+}
+
+tr,
+td {
+    background-color: wheat;
+}

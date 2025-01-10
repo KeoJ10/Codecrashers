@@ -20,6 +20,8 @@
                 <li>></li>
                 <li>PlayStation 4</li>
             </ol>
+                <?=$itemList?>
+            </table>
 		</header>
 <main>
             <section>
@@ -35,6 +37,7 @@
             <section id="products">
 				<?=$loopedGames?>
 </section>
+
 </div>
 </body>
 </html>
