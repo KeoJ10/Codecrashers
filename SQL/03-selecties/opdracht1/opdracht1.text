@@ -1,0 +1,9 @@
+INSERT INTO raw (genre, artist, album, track, extension) VALUES ( 'pop', 'ABBA', ' Arrival', ' Knowing Me, Knowing You', 'mp3');
+
+INSERT INTO raw (genre, artist, album, track, extension) VALUES 
+( 'disco', 'Bee Gees', 'Children of the World', 'You Should Be Dancing', 'flac'),
+( 'disco', 'Bee Gees', 'Saturday Night Fever', 'Stayin Alive', 'flac'),
+( 'disco', 'Bee Gees', 'Main Course', 'lights on Broadway', 'flac'),
+( 'disco', 'Bee Gees', 'Spirits Having Flown', 'Tragedy', 'flac');
+
+INSERT INTO raw (genre, artist, album, track, extension) VALUES ( 'Pop', 'Men at Work', NULL, 'Overkill', 'mp3');
