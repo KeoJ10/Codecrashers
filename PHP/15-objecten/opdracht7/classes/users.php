@@ -30,5 +30,14 @@ class User {
         $this->password = $password;
         $this->active = $active;
     }
+
+	public function showUser() : string{
+        $bgColor = $this->getActivity() ? 'green' : 'red';
+        return '<table style="background-color:' . $bgColor . ';">
+        <tr><td>Name:</td><td>' . $this->getName() . '</td></tr>
+        <tr><td>Password: </td><td>' . $this->getPassword() . '</td></tr>
+        <tr><td>Email:</td><td> ' . $this->getEmail() . '</td></tr>
+        <tr><td>Age:</td><td> ' . $this->getAge() . '</td></tr></table>';
+    }
 }
 ?>
