@@ -1,0 +1,88 @@
+:root {
+    --scarlet: rgb(158, 42, 34);
+    --violet: rgb(85, 34, 119);
+    --borderClamp: clamp(0.3rem, 2vw, 0.7rem);
+    --gapClamp: clamp(2.2rem, 2vmin, 2.5rem);
+    --paddingClamp: clamp(1.5rem, 4vw, 2.5rem);
+    --fontsizeClamp: clamp(1.2rem, 2.5vw, 1.4rem);
+}
+
+html,
+body {
+    font-size: var(--fontsizeClamp);
+    color: rgb(62, 59, 58);
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: rgb(62, 59, 58);
+    background-image: url('../img/pattern-grey.jpg');
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 1440px;
+    margin: 0 auto;
+    border-left: var(--borderClamp) solid var(--scarlet);
+    border-right: var(--borderClamp) solid var(--violet);
+}
+
+header>img {
+    display: block;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gapClamp);
+    padding: var(--paddingClamp);
+    background-color: rgb(255, 255, 255);
+    background-image: url('../img/pattern-white.jpg');
+}
+
+main>section {
+    flex: 1;
+}
+
+section:first-child>p:first-child {
+    font-style: italic;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+}
+
+footer>figure {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+footer>figure:first-child {
+    background-color: var(--scarlet);
+}
+
+footer>figure:last-child {
+    background-color: var(--violet);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.scarlet {
+    color: var(--scarlet);
+}
+
+.violet {
+    color: var(--violet);
+}
+
+@media screen and (max-width: 1020px) {
+    body {
+        main {
+            flex-direction: column;
+        }
+    }
+}
