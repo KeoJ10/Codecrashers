@@ -1,0 +1,13 @@
+{% extends "index.html" %} {% block content %}
+<ul>
+    {% for link in links %}
+    <li><a href="index.php?page=product&id={{ link.id }}" id="product">{{ link.name }}</a></li>
+    {% endfor %}
+</ul>
+<section>
+    <h1>{{ name }}</h1>
+    <h2>{{ price }}</h2>
+    <img src="images/{{ images }}" alt=" ">
+</section>
+
+{% endblock %}

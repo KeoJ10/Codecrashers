@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/main.css"> {{ css|raw}}
+
+</head>
+<nav>
+    <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="?page=product">Producten</a></li>
+        <li><a href="?page=contact">Contact</a></li>
+    </ul>
+</nav>
+
+<body>
+    <div id="container">
+        {% block content %}
+        <h1>{{ h1 }}</h1>
+        <p>{{ p }}</p>
+        {% endblock %}
+    </div>
+</body>
+
+</html>
