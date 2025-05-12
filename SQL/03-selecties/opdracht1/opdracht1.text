@@ -7,3 +7,5 @@ INSERT INTO raw (genre, artist, album, track, extension) VALUES
 ( 'disco', 'Bee Gees', 'Spirits Having Flown', 'Tragedy', 'flac');
 
 INSERT INTO raw (genre, artist, album, track, extension) VALUES ( 'Pop', 'Men at Work', NULL, 'Overkill', 'mp3');
+
+

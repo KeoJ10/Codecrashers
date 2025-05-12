@@ -1,0 +1,2 @@
+SELECT genre, artist, COUNT(artist) AS artist_count FROM `raw` GROUP BY genre HAVING artist_count >= 1000;
+SELECT album, genre, artist, AVG(rating) AS avg_rating FROM `raw` WHERE artist = 'The Beatles' AND album != 'Beatles unsorted' AND LENGTH(album) <= 26 GROUP BY album, genre, artist ORDER BY LENGTH(album) DESC;
