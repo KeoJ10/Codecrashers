@@ -1,0 +1,18 @@
+.monster-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.monster-table {
+    border-collapse: collapse;
+}
+
+table {
+    width: 320px;
+    border: 1px solid #000;
+}
+
+.monster-table td {
+    padding: 10px;
+    border: 1px solid #000;
+}
