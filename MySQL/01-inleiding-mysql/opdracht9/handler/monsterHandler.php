@@ -12,8 +12,6 @@ if ($dbh->connect_error){
 $dbh->set_charset('utf8');
 $monsterQuery = "SELECT * FROM monsters";
 
-$monsterNameQuery = "SELECT name FROM monsters";
-
 $results = $dbh->query($monsterQuery);
 $monsters = $results->fetch_all(MYSQLI_ASSOC);
 
