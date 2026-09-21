@@ -21,9 +21,6 @@ $presidents = $results->fetch_all(MYSQLI_ASSOC);
 
 $output = '';
 
-
-
-
 foreach ($presidents as $row) {
     $partyColor = htmlspecialchars($row['party']) == 'DEM.' ? 'rgba(0, 136, 255, 0.9)' : 'rgb(255, 13, 0, 0.9)';
     $approvalRate = htmlspecialchars($row['approvalRate']) > 50 ? '4px solid gold' : '';
@@ -57,6 +54,4 @@ for($i = 0; $i < count($sqlStatements); $i++) {
     }
 
 [$amount, $average, $averageRep, $totalDaysInOfficeDem, $totalDaysInOfficeRep, $mostDaysInOffice, $leastDaysInOffice] = $results;
-
-
 ?>

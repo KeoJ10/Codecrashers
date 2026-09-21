@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <i class="fa-brands fa-facebook"></i>
+    <title>Beren</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="?page=index.php">Home</a></li>
+                <li><a href="?page=koala.php">Koala</a></li>
+                <li><a href="?page=grizzlybeer.php">Grizzlybeer</a></li>
+                <li><a href="?page=ijsbeer.php">IJsbeer</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h1>{{ h1 }}</h1>
+            <p>
+                {{ p }}
+            </p>
+            {{ img|raw }}
+        </div>
+        <div id="footer">
+            <span><?php echo $_SERVER["REMOTE_ADDR"];?></span>
+        </div>
+
+    </div>
+</body>
+
+</html>

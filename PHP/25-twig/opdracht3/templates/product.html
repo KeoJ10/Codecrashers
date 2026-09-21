@@ -1,13 +1,21 @@
-{% extends "index.html" %} {% block content %}
+{% extends "index.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="./css/product.css">
+{% endblock %}
+
+{% block content %}
 <ul>
-    {% for link in links %}
-    <li><a href="index.php?page=product&id={{ link.id }}" id="product">{{ link.name }}</a></li>
+    {% for key, product in names %}
+    <li>
+        <a href="index.php?page=product&id={{ key|lower }}">{{ product.name }}</a>
+    </li>
     {% endfor %}
 </ul>
-<section>
-    <h1>{{ name }}</h1>
-    <h2>{{ price }}</h2>
-    <img src="images/{{ images }}" alt=" ">
-</section>
 
+<section>
+    <h1>{{ product.name }}</h1>
+    <h2>€{{ product.price }}</h2>
+    <img src="images/{{ product.image }}" alt="{{ product.description }}">
+</section>
 {% endblock %}

@@ -15,6 +15,8 @@ $boekQuery = "SELECT * FROM boeken";
 $results = $dbh->query($boekQuery);
 $boeken = $results->fetch_all(MYSQLI_ASSOC);
 
+
+
 $listOfBooks = '<div class="boeken-columns"><table border="1">';
 $listOfBooks .= '<tr>
     <th>ID</th>
@@ -43,12 +45,14 @@ foreach ($boeken as $boek) {
 $listOfBooks .= '</table></div>';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['naam']) && isset($_POST['auteur']) && isset($_POST['verschijningsdatum']) && isset($_POST['druk']) && isset($_POST['taal']) && isset($_POST['prijs'])) {
-    $naam = $_POST['naam'];
-    $auteur = $_POST['auteur'];
-    $verschijningsdatum = $_POST['verschijningsdatum'];
-    $druk = $_POST['druk'];
-    $taal = $_POST['taal'];
-    $prijs = str_replace(',', '.', $_POST['prijs']);
+
+    if (!isset($_POST['edit_id'])) {
+        $naam = $_POST['naam'];
+        $auteur = $_POST['auteur'];
+        $verschijningsdatum = $_POST['verschijningsdatum'];
+        $druk = $_POST['druk'];
+        $taal = $_POST['taal'];
+        $prijs = str_replace(',', '.', $_POST['prijs']);
 
     switch ($taal) {
         case 'Nederlands':
@@ -81,9 +85,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['naam']) && isset($_PO
         echo '<p>Fout bij toevoegen van boek: ' . htmlspecialchars($stmt->error) . '</p>';
     }
 }
+}
 
 if(isset($_GET['remove_id'])) {
-    $boekId = $_GET['id'];
+    $boekId = $_GET['remove_id'];
     $removeQuery = "DELETE FROM boeken WHERE id = ?";
     $stmt = $dbh->prepare($removeQuery);
     $stmt->bind_param('i', $boekId);
@@ -95,34 +100,57 @@ if(isset($_GET['remove_id'])) {
     }
 }
 
-if(isset($_GET['edit_id'])) {
+if (isset($_GET['edit_id'])) {
     $editId = $_GET['edit_id'];
-    $editQuery = "SELECT * FROM boeken WHERE id = ?";
-    $stmt = $dbh->prepare($editQuery);
+    $boekQuery = "SELECT * FROM boeken WHERE id = ?";
+    $stmt = $dbh->prepare($boekQuery);
     $stmt->bind_param('i', $editId);
     $stmt->execute();
     $result = $stmt->get_result();
     $boek = $result->fetch_assoc();
 
     if ($boek) {
-        echo '<form method="post" action="index.php?edit_id=' . htmlspecialchars($boek['id']) . '">';
-        echo '<input type="text" name="naam" value="' . htmlspecialchars($boek['naam']) . '" required>';
-        echo '<input type="text" name="auteur" value="' . htmlspecialchars($boek['auteur']) . '" required>';
-        echo '<input type="number" name="verschijningsdatum" value="' . htmlspecialchars($boek['verschijningsdatum']) . '" required>';
-        echo '<input type="text" name="druk" value="' . htmlspecialchars($boek['druk']) . '" required>';
-        echo '<select name="taal">';
-        echo '<option value="Nederlands"' . ($boek['taal'] === 'nl' ? ' selected' : '') . '>Nederlands</option>';
-        echo '<option value="Engels"' . ($boek['taal'] === 'en' ? ' selected' : '') . '>Engels</option>';
-        echo '<option value="Frans"' . ($boek['taal'] === 'fr' ? ' selected' : '') . '>Frans</option>';
-        echo '<option value="Latijn"' . ($boek['taal'] === 'la' ? ' selected' : '') . '>Latijn</option>';
+        echo '<h2>Wijzig een boek</h2>';
+        echo '<form method="post">';
+        echo '<input type="hidden" name="edit_id" value="' . htmlspecialchars($boek['id']) . '">';
+        echo '<input type="text" name="naam" placeholder="Naam" value="' . htmlspecialchars($boek['naam']) . '" required>';
+        echo '<input type="text" name="auteur" placeholder="Auteur" value="' . htmlspecialchars($boek['auteur']) . '" required>';
+        echo '<input type="number" name="verschijningsdatum" placeholder="Verschijningsdatum" value="' . htmlspecialchars($boek['verschijningsdatum']) . '" required>';
+        echo '<input type="number" name="druk" placeholder="1" min="1" value="' . htmlspecialchars($boek['druk']) . '">';
+        echo '<input type="number" name="prijs" placeholder="Prijs" step="0.01" min="0.01" max="1000" value="' . htmlspecialchars($boek['prijs']) . '" required>';
+        echo '<select name="taal" required>';
+        $talen = ['Nederlands', 'Engels', 'Frans', 'Latijn'];
+        foreach ($talen as $taalOptie) {
+            $selected = ($boek['taal'] == $taalOptie || $boek['taal'] == substr(strtolower($taalOptie), 0, 2)) ? 'selected' : '';
+            echo '<option value="' . $taalOptie . '" ' . $selected . '>' . $taalOptie . '</option>';
+        }
         echo '</select>';
-        echo '<input type="number" name="prijs" value="' . htmlspecialchars($boek['prijs']) . '" step="0.01" min="0.01" max="1000" required>';
-        echo '<button type="submit">Update</button>';
+        echo '<input type="submit" value="Wijzig">';
         echo '</form>';
     } else {
         echo '<p>Boek niet gevonden.</p>';
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_id'])) {
+    $editId = $_POST['edit_id'];
+    $naam = $_POST['naam'];
+    $auteur = $_POST['auteur'];
+    $verschijningsdatum = $_POST['verschijningsdatum'];
+    $druk = $_POST['druk'];
+    $taal = $_POST['taal'];
+    $prijs = str_replace(',', '.', $_POST['prijs']);
+
+    $updateQuery = "UPDATE boeken SET naam = ?, auteur = ?, verschijningsdatum = ?, druk = ?, taal = ?, prijs = ? WHERE id = ?";
+    $stmt = $dbh->prepare($updateQuery);
+    $stmt->bind_param('ssisdsi', $naam, $auteur, $verschijningsdatum, $druk, $taal, $prijs, $editId);
+
+    if ($stmt->execute()) {
+        header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
+        exit;
+    } else {
+        echo '<p>Fout bij wijzigen van boek: ' . htmlspecialchars($stmt->error) . '</p>';
+    }
+}
 
 ?>

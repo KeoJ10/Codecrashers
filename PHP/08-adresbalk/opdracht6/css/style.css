@@ -1,0 +1,45 @@
+body {
+	background-color: IndianRed;
+	color: PapayaWhip;
+	font-size: 20px;
+	font-family: Calibri, sans-serif;
+}
+
+#container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.breadcrumbs {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 5px;
+}
+a {
+	list-style: none;
+	text-decoration: none;
+	color: brown;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+}
+
+.row section {
+	flex: 1;
+}
+
+.row figure {
+	flex: 1;
+	margin-top: 2rem;
+}
+
+h1, h2 {
+	font-family: Tillana, Calibri, sans-serif;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 1rem;
+}

@@ -6,3 +6,9 @@ td {
     padding: 8px;
     width: 500px;
 }
+
+.invoervelden {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

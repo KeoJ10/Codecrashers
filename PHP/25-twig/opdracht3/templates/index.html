@@ -5,14 +5,17 @@
 
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="./css/main.css"> {{ css|raw}}
+    <link rel="stylesheet" href="./css/main.css">
+    {% block css %}
+
+    {% endblock %}
 
 </head>
 <nav>
     <ul>
         <li><a href="./">Home</a></li>
-        <li><a href="?page=product">Producten</a></li>
-        <li><a href="?page=contact">Contact</a></li>
+        <li><a href="product">Producten</a></li>
+        <li><a href="contact">Contact</a></li>
     </ul>
 </nav>
 

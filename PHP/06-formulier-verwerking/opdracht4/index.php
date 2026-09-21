@@ -7,11 +7,11 @@
     <form action="verwerking.php" method="post">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br><br>
-        <input type="radio" id="man" name="man" value="man">
+        <input type="radio" id="man" name="geslacht" value="man">
         <label for="man">man:</label>
-        <input type="radio" id="vrouw" name="vrouw" value="vrouw">
+        <input type="radio" id="vrouw" name="geslacht" value="vrouw">
         <label for="vrouw">vrouw:</label>
-        <input type="radio" id="anders" name="anders" value="anders">
+        <input type="radio" id="anders" name="geslacht" value="anders">
         <label for="anders">anders:</label><br><br>
         <label for="woonplaats">woonplaats:</label><br>
         <input type="text" id="woonplaats" name="woonplaats"><br><br>

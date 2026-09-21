@@ -74,27 +74,17 @@ if (!empty($_SESSION['shoppingCart'])) {
         }
     }
     
-    $itemList .= '<table><tr><th>Game</th><th>Price</th><th>Quantity</th><th>Total Price</th></tr>';
     foreach ($array as $item) {
         $itemTotalPrice = $item['price'] * $quantities[$item['game']];
         $itemList .= '<tr>
         <td>' . htmlspecialchars($item['game']) . '</td>
         <td>' . htmlspecialchars($item['price']) . '</td>
         <td>' . intval($quantities[$item['game']]) . '</td>
-        <td>' . htmlspecialchars($itemTotalPrice) . '</td></tr>';
+        <td>' . htmlspecialchars($totalPrice) . '</td></tr>';
         $totalPrice += $itemTotalPrice;
     }
-    $itemList .= '<tr><td></td><td></td><td></td><td id="totalprice" colspan="4">'. $totalPrice . '</td></tr>';
-    $itemList .= '<tr><td colspan="2" id="submit">
-        <form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?emptyCart" method="post">
-            <button type="submit">Empty cart</button>
-        </form>
-    </td>
-    <td colspan="2" id="submit">
-        <form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '?checkout" method="post">
-            <button type="submit">Checkout</button>
-        </form>
-    </td></tr>';
+    
+    $itemList .= '<tr><td>'. $totalPrice . ' </td></tr></table>';
 } else {
     $itemList .= '<li>Your cart is empty.</li>';
 }
@@ -109,14 +99,5 @@ for($i = 0; $i < $showProductAmount; $i++){
     <button type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
     </form></article>';
 }
-if (isset($_GET['emptyCart'])) {
-    $_SESSION['shoppingCart'] = [];
-    header('Location: ' . $_SERVER['PHP_SELF']);
-    exit;
-}
-if (isset($_GET['checkout'])) {
-    setcookie('totalPrice', $totalPrice, time() + 3600);
-    header('Location: ' . $_SERVER['PHP_SELF']);
-    exit;
-}
+$price
 ?>

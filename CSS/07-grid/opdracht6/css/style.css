@@ -10,12 +10,14 @@
 }
 
 #tiles {
-    height: 534px;
-    background-color: aqua;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    width: 100%;
+    grid-template-columns: repeat(6, minmax(50px, 267px));
+    grid-template-rows: auto auto;
+    grid-template-areas:
+	'tile1 tile2 tile4 tile5 tile6 tile6'
+	'tile3 tile3 tile4 tile5 tile7 tile8'
+	;
+    max-height: 534px;
 }
 
 #banner {
@@ -31,47 +33,33 @@
 }
 
 #tiles>.cell:nth-child(1) {
-    grid-row-start: 1;
-    grid-row-end: 1;
-    background-color: lightpink;
+    grid-area: tile1;
+}
+
+#tiles>.cell:nth-child(2) {
+    grid-area: tile2;
 }
 
 #tiles>.cell:nth-child(3) {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-end: 3;
-    grid-row-start: 1;
-    background-color: lightpink;
+    grid-area: tile3;
 }
 
 #tiles>.cell:nth-child(4) {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-end: 3;
-    grid-row-start: 1;
-    background-color: yellow;
+    grid-area: tile4;
 }
 
 #tiles>.cell:nth-child(5) {
-    grid-column-start: 6;
-    grid-column-end: 5;
-    background-color: lightpink;
+    grid-area: tile5;
 }
 
 #tiles>.cell:nth-child(6) {
-    background-color: lightpink;
-    grid-column-start: 5;
-    grid-column-end: 5;
-    grid-row-start: 2;
+    grid-area: tile6;
 }
 
 #tiles>.cell:nth-child(7) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    background-color: lightgreen;
+    grid-area: tile7;
 }
 
 #tiles>.cell:nth-child(8) {
-    background-color: lightgreen;
+    grid-area: tile8;
 }

@@ -1,0 +1,19 @@
+<head>
+    <link href="css/stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <form method="post" action="">
+        <label for="naam">Naam</label><br>
+        <input type="text" name="name" id="name"></input><br><br>
+        <label for="Bericht" id="message">Bericht</label><br>
+        <textarea name="message"></textarea><br><br>
+        <input type="submit" name="submit"></input>
+    </form>
+    <section>
+        {% for logMessage in logMessages %}
+        <p>{{ logMessage|raw }}</p>
+        {% endfor %} {% for logContent in logContents %}
+        <pre>{{ logContent|raw }}</pre> {% endfor %}
+    </section>
+</body>

@@ -1,0 +1,90 @@
+body {
+    background-color: beige;
+    margin: 0;
+}
+
+#container {
+    background-color: rgb(122, 122, 192);
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px;
+    gap: 20px;
+    max-height: 1000px;
+    height: 1000px;
+    justify-content: right;
+    align-content: flex-end;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.cell p {
+    padding: 3rem;
+}
+
+
+.cell:nth-child(1) {
+    background-color: red;
+    place-self: center;
+}
+
+.cell:nth-child(2) {
+    background-color: orange;
+    align-self: center;
+}
+
+.cell:nth-child(3) {
+    background-color: yellow;
+    justify-self: center;
+}
+
+.cell:nth-child(4) {
+    background-color: green;
+}
+
+.cell:nth-child(5) {
+    background-color: lightblue;
+}
+
+.cell:nth-child(6) {
+    background-color: blue;
+}
+
+.cell:nth-child(7) {
+    background-color: purple;
+}
+
+.cell:nth-child(8) {
+    background-color: pink;
+}
+
+.cell:nth-child(9) {
+    background-color: brown;
+}
+
+.cell:nth-child(10) {
+    background-color: black;
+}
+
+.cell:nth-child(11) {
+    background-color: white;
+}
+
+.cell:nth-child(12) {
+    background-color: gray;
+}
+
+.cell:nth-child(13) {
+    background-color: cyan;
+}
+
+.cell:nth-child(14) {
+    background-color: magenta;
+}
+
+.cell:nth-child(15) {
+    background-color: lime;
+}
+
+.cell:nth-child(16) {
+    background-color: maroon;
+}

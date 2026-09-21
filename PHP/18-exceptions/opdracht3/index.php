@@ -6,8 +6,6 @@ $random3 = rand(1,10);
 $random4 = rand(1,10);
 $getallen = [$random1, $random2, $random3, $random4];
 
-
-
 try {
     $i = 0;
     foreach($getallen as $getal) {

@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteRule ^contact/?$ index.php?page=contact [L]
+RewriteRule ^product/?$ index.php?page=product [L]
+
+RewriteRule %{QUERY_STRING} index.php?page=product&id=([a-z0-9\-]+)$

@@ -1,0 +1,5 @@
+{
+    "autoload": {
+        "classmap": ["handler/databaseHandler.php", "models"]
+    }
+}

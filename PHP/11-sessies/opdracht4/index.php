@@ -20,6 +20,14 @@
                 <li>></li>
                 <li>PlayStation 4</li>
             </ol>
+            
+            <table>
+                <tr>
+                <th>product</th>
+    <th>prijs per stuk</th>
+    <th>hoeveelheid</th>
+    <th>totaalprijs<th>
+                </tr>
                 <?=$itemList?>
             </table>
 		</header>

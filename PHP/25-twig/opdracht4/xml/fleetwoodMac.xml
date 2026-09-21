@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<albums>
+    <album>
+        <title label="Warner Bros">Tango in the Night</title>
+        <year>1987</year>
+        <duration>44.28</duration>
+        <tracks>12</tracks>
+        <songs>
+            Big Love
+            Little Lies
+            Everywhere
+        </songs>
+    </album>
+    <album>
+        <title label="reprise">Fleetwood Mac</title>
+        <year>1975</year>
+        <duration>42.12</duration>
+        <tracks>10</tracks>
+        <songs>
+            Rhiannon
+            landslide
+            Say You Love Me
+        </songs>
+    </album>
+    <album>
+        <title label="Warner Bros">tusk</title>
+        <year>1970</year>
+        <duration>74.25</duration>
+        <tracks>20</tracks>
+        <songs>
+            Sara 
+            Tusk  
+            Not That Funny
+        </songs>
+    </album>
+    <album>
+        <title label="Warner Bros">Mirage</title>
+        <year>1982</year>
+        <duration>42.52</duration>
+        <tracks>10</tracks>
+        <songs>
+            Hold Me
+            Gypsy 
+            Love in Store
+        </songs>
+    </album>
+<album><title>made up</title><year>2013</year><duration>12:32</duration><tracks>12</tracks><songs>two</songs></album></albums>

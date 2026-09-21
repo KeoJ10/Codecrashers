@@ -1,0 +1,49 @@
+<head>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Fleetwood Mac</h1>
+        <table id="albums">
+            <thead>
+                <tr>
+                    <th>Album</th>
+                    <th>year</th>
+                    <th>Afspeeltijd</th>
+                    <th>Nummers</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for album in albums %}
+                <tr>
+                    <td>{{ album.title }} </td>
+                    <td> {{ album.year }}</td>
+                    <td class="active-row"> {{ album.duration }} </td>
+                    <td> {{ album.tracks }} , waaronder: {{ album.songs }} </td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="delete" value="{{ loop.index0 }}">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form method="post" id="form">
+            <label for="album">Album:</label><br>
+            <input type="text" id="album" name="album"><br>
+            <label for="year">Year:</label><br>
+            <input type="number" id="year" name="year"><br>
+            <label for="duration">Afspeeltijd:</label><br>
+            <input type="time" id="duration" name="duration"><br>
+            <label for="tracks">Aantal nummers:</label><br>
+            <input type="number" id="tracks" name="tracks"><br>
+            <label for="songs">Nummers:</label><br>
+            <input type="text" id="songs" name="songs"><br><br>
+            <input type="submit" value="submit" name="submit">
+        </form>
+    </div>
+</body>

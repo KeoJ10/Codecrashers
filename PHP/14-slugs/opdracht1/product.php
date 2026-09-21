@@ -34,23 +34,36 @@
 			$img = 'no-product-found.png';
 	}
 	
+	$links = [
+        ['id' => 1, 'name' => 'Lords of Waterdeep'],
+        ['id' => 2, 'name' => 'Joking Hazard'],
+        ['id' => 3, 'name' => 'Arkham Horror'],
+        ['id' => 4, 'name' => 'Smash Up']
+    ];
 
 ?>
 <!DOCTYPE html>
 <html lang="nl-NL">
 	<head>
+
 		<meta charset="UTF-8">
 		<title>Productpagina</title>
 		<link rel="stylesheet" href="css/main.css">
+		
 	</head>
 	<body>
 		<div id="container">
 			<?php include_once 'includes/nav.php';?>
+			<?php
+			foreach($links as $names): ?>
+			<a href="product.php?id=<?=$names['id'];?>"><?=$names['name'];?></a>
+			<?php endforeach ?>
 			<section>
 				<h1><?=$name;?></h1>
 				<h2>€<?=$price;?></h2>
 				<img src="images/<?=$img;?>" alt="<?=$name;?>">
 			</section>
+		
 		</div>
 	</body>
 </html>
