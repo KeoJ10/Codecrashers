@@ -1,0 +1,7 @@
+#random-numbers {
+    display: flex;
+    flex-direction: column;
+}
+#random-numbers span {
+    margin: 5px 0;
+}

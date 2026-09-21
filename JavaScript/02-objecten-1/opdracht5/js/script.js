@@ -1,0 +1,11 @@
+const answer = prompt("Kies een woord uit", "Sushi");
+const chooseLetter = prompt("Kies een letter uit", "u");
+const length = answer.length;
+const uppercase = answer.toUpperCase();
+const lowercase = answer.toLowerCase();
+const letterIndex = answer.indexOf(chooseLetter);
+document.getElementById("answer").innerHTML = answer;
+document.getElementById("length").innerHTML = length;
+document.getElementById("uppercase").innerHTML = uppercase;
+document.getElementById("lowercase").innerHTML = lowercase;
+document.getElementById("letterIndex").innerHTML = letterIndex;
