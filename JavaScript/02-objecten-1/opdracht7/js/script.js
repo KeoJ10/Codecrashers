@@ -8,7 +8,7 @@ const replace = anthem.replace("Queen", "King");
 
 const lyrics1 = "I'm blue,";
 const lyrics2 = "Da ba dee da ba di";
-lyrics2.split(" ");
+const lyricsSpace = lyrics2 + " ";
 
 const yoda = "you must have patience my young Padawan";
 
@@ -16,5 +16,5 @@ const newSentence = yoda.replace("you must have patience", "patience you must ha
 
 document.getElementById("game").innerHTML = dkc;
 document.getElementById("anthem").innerHTML = replace;
-document.getElementById("lyrics").innerHTML = lyrics1 + " " + lyrics2.repeat(7);
+document.getElementById("lyrics").innerHTML = lyrics1 + " " + lyricsSpace.repeat(7);
 document.getElementById("patience").innerHTML = newSentence;
