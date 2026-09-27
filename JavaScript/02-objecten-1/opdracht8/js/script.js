@@ -3,16 +3,12 @@ const cols = document.querySelectorAll(".col");
 const headRows = document.querySelectorAll(".headRow");
 const rows = document.querySelectorAll(".row");
 
+rows.forEach((row, index) => {
+    const col = cols[index % 4];
+    const headRow = headRows[Math.floor(index / 4)];
 
-rows.forEach(row => {
-    cols.forEach(col => {
+    const selectedCol = Number(col.innerHTML);
+    const selectedRow = Number(headRow.innerHTML);
 
-    headRows.forEach(headRow => {
-        const selectedCol = col.innerHTML;
-        const selectedRow = headRow.innerHTML;
-        const trimmedword = word.substring(selectedCol, selectedRow);
-
-            row.innerHTML = trimmedword;
-        });
-    });    
+    row.innerHTML = word.substring(selectedCol, selectedRow);
 });
